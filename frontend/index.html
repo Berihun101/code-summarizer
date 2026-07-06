@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code Summarization</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <div class="container">
+        <!-- HEADER -->
+        <div class="header">
+            <span class="logo">📝</span>
+            <h1>Code Summarization</h1>
+            <span class="badge" id="statusBadge">● Online</span>
+        </div>
+
+        <!-- INPUT -->
+        <div class="input-section">
+            <label for="codeInput">✏️ Paste your Python code:</label>
+            <textarea
+                id="codeInput"
+                placeholder="def add(a, b):&#10;    return a + b"
+                spellcheck="false"
+            >def add(a, b):&#10;    return a + b</textarea>
+        </div>
+
+        <!-- ACTIONS -->
+        <div class="actions">
+            <button class="btn btn-primary" id="summarizeBtn">
+                <span id="btnIcon">✨</span>
+                <span id="btnText">Summarize</span>
+            </button>
+            <button class="btn btn-secondary" id="clearBtn">🗑️ Clear</button>
+            <button class="btn btn-secondary" id="exampleBtn">📋 Load Example</button>
+        </div>
+
+        <!-- STATUS -->
+        <div class="status" id="status"></div>
+
+        <!-- RESULT -->
+        <div class="result-section">
+            <div class="label">📄 Generated Summary</div>
+            <div class="result-box" id="resultBox">
+                <span class="placeholder">Your summary will appear here...</span>
+            </div>
+        </div>
+
+        <!-- EXAMPLES -->
+        <div class="examples">
+            <div class="label">💡 Try these examples:</div>
+            <div class="chips">
+                <span class="chip" data-code="def add(a, b):&#10;    return a + b">add</span>
+                <span class="chip" data-code="def multiply(x, y):&#10;    return x * y">multiply</span>
+                <span class="chip" data-code="def is_even(n):&#10;    return n % 2 == 0">is_even</span>
+                <span class="chip" data-code="def factorial(n):&#10;    if n <= 1:&#10;        return 1&#10;    return n * factorial(n-1)">factorial</span>
+                <span class="chip" data-code="def reverse_string(s):&#10;    return s[::-1]">reverse</span>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            Built with ❤️ using PyTorch + FastAPI &nbsp;·&nbsp;
+            <a href="#" onclick="checkHealth()">🔄 Health Check</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,311 @@
+/* ============ RESET & BASE ============ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #0d1117;
+    color: #e6edf3;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    width: 100%;
+    background: #161b22;
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    border: 1px solid #30363d;
+}
+
+/* ============ HEADER ============ */
+.header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.header .logo {
+    font-size: 28px;
+}
+
+.header h1 {
+    font-size: 24px;
+    font-weight: 600;
+    background: linear-gradient(135deg, #58a6ff, #f0883e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.header .badge {
+    margin-left: auto;
+    background: #238636;
+    color: white;
+    font-size: 12px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.header .badge.offline {
+    background: #da3633;
+}
+
+/* ============ INPUT AREA ============ */
+.input-section {
+    margin-bottom: 24px;
+}
+
+.input-section label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #8b949e;
+    margin-bottom: 8px;
+}
+
+.input-section textarea {
+    width: 100%;
+    min-height: 140px;
+    background: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    padding: 16px;
+    color: #e6edf3;
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-size: 14px;
+    resize: vertical;
+    transition: border-color 0.2s;
+}
+
+.input-section textarea:focus {
+    outline: none;
+    border-color: #58a6ff;
+    box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.15);
+}
+
+.input-section textarea::placeholder {
+    color: #484f58;
+}
+
+/* ============ BUTTONS ============ */
+.actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+}
+
+.btn {
+    padding: 10px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-primary {
+    background: #238636;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #2ea043;
+    transform: translateY(-1px);
+}
+
+.btn-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn-secondary {
+    background: #21262d;
+    color: #c9d1d9;
+    border: 1px solid #30363d;
+}
+
+.btn-secondary:hover {
+    background: #30363d;
+}
+
+.btn-danger {
+    background: #da3633;
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #f85149;
+}
+
+/* ============ STATUS / LOADING ============ */
+.status {
+    display: none;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    font-size: 14px;
+}
+
+.status.loading {
+    display: block;
+    background: #1f2937;
+    color: #60a5fa;
+    border: 1px solid #374151;
+}
+
+.status.error {
+    display: block;
+    background: #2d1b1b;
+    color: #f87171;
+    border: 1px solid #7f1d1d;
+}
+
+.status.success {
+    display: block;
+    background: #1b2d1b;
+    color: #86efac;
+    border: 1px solid #1d7f1d;
+}
+
+/* ============ RESULT ============ */
+.result-section {
+    margin-top: 24px;
+    border-top: 1px solid #30363d;
+    padding-top: 24px;
+}
+
+.result-section .label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #8b949e;
+    margin-bottom: 8px;
+}
+
+.result-box {
+    background: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    padding: 16px;
+    min-height: 60px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #e6edf3;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+.result-box .placeholder {
+    color: #484f58;
+    font-style: italic;
+}
+
+/* ============ EXAMPLES ============ */
+.examples {
+    margin-top: 20px;
+}
+
+.examples .label {
+    font-size: 13px;
+    color: #8b949e;
+    margin-bottom: 8px;
+}
+
+.examples .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.examples .chip {
+    background: #21262d;
+    border: 1px solid #30363d;
+    border-radius: 16px;
+    padding: 4px 14px;
+    font-size: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    color: #8b949e;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.examples .chip:hover {
+    background: #30363d;
+    color: #e6edf3;
+    border-color: #58a6ff;
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    .header h1 {
+        font-size: 18px;
+    }
+
+    .actions {
+        flex-direction: column;
+    }
+
+    .btn {
+        justify-content: center;
+    }
+
+    .input-section textarea {
+        min-height: 100px;
+        font-size: 13px;
+    }
+}
+
+/* ============ SPINNER ============ */
+.spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ============ FOOTER ============ */
+.footer {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 12px;
+    color: #484f58;
+    border-top: 1px solid #21262d;
+    padding-top: 20px;
+}
+
+.footer a {
+    color: #58a6ff;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
